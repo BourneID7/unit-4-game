@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Crystal Counting Game</title>
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-md-12">
+                <h1>Crystals Collector!</h1>
+            </div>
+        </header>
+
+        <main class="row">
+            <div class="col-md-6 colPad">
+                <h3>Rules</h3>
+                <p>At the start of each game you'll be given a random number to match.</p>
+                <p>Each of the four crystals on the right has a mystery value between 1 and 12. Click a crystal to add it's value to your score.</p>
+                <p>If you match the value of the random number without going over, you win.</p>
+                <p>If you go over the random number you lose.</p>
+                <p>Each time you play the crystals will have new mystery values.</p>
+            </div> <!-- end of left colum -->
+            <div class="col-md-6 colPad">
+                <p class="center">Press any key to start the game.</p>
+                <h3 class="center">The number to match is <span id="matchNumber"></span></h3>
+                <h5 class="center">Your score is: <span id="yourScore"></span></h5>
+                <div class="row">
+                    <h4>Click a crystal!</h4>
+                </div>
+
+                <div class="row align-items-center padBottom">
+                    <div class="col">
+                        <img id="sapphireBtn" class="img-fluid" src="assets/images/sapphire.png">
+                    </div>
+                    <div class="col">
+                        <img id="rubyBtn" class="img-fluid" src="assets/images/ruby.png">
+                    </div>
+                    <div class="col">
+                        <img id="diamondBtn" class="img-fluid" src="assets/images/diamond.png">
+                    </div>
+                    <div class="col">
+                        <img id="amethystBtn" class="img-fluid" src="assets/images/amethyst.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <p id="winMessage"></p>
+                    <p id="lossMessage"></p>
+                </div>
+                <div class="row">
+                    <h5>Wins: <span id="winsTotal"></span></h4>
+                </div>
+                <div class="row">
+                    <h5>Losses: <span id="lossTotal"></span></h4>
+                </div>
+
+            </div> <!-- end of right column --> 
+        </main>
+    </div> <!-- end container -->
+    
+</body>
+</html>
