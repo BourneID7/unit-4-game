@@ -17,6 +17,7 @@ $(document).ready(function() {
 
     //Empty variable to hold running total of clicked crystal values
     var score = 0;
+    var scoreText = $("#yourScore");
 
     //Empty variables to hold wins/losses
     var wins = 0;
@@ -49,27 +50,29 @@ $(document).ready(function() {
 
         // assign crystal values to corresponding image. Function to add value to score when clicked.
         $("#sapphireBtn").on("click", function() {
-            var value = $(this).sapphire;
+            $(this).sapphire;
             score = score + sapphire;
-            console.log(score);
+            console.log("current score is " + score);
         })
         $("#rubyBtn").on("click", function() {
-            var value = $(this).ruby;
+            $(this).ruby;
             score = score + ruby;
-            console.log(score);
+            console.log("current score is " + score);
         })
         $("#diamondBtn").on("click", function() {
-            var value = $(this).diamond;
+            $(this).diamond;
             score = score + diamond;
-            console.log(score);
+            console.log("current score is " + score);
         })
         $("#amethystBtn").on("click", function() {
-            var value = $(this).amethyst;
+            $(this).amethyst;
             score = score + amethyst;
-            console.log(score);
+            console.log("current score is " + score);
         })
 
-        // Update & display score
+        // display score
+        $(scoreText).text("Your score is: " + score);
+
 
         // determine win. Add 1 to total wins & display win message
         if (score === num) {
