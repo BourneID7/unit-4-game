@@ -15,7 +15,7 @@ $(document).ready(function() {
         var diamond = "";
         var amethyst = "";
 
-        //Empty variable to hold running total of clicked crystal values
+        //Empty variables to hold running total of clicked crystal values
         var score = 0;
         var scoreText = $("#yourScore");
 
@@ -56,6 +56,20 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
+            // determine win. Add 1 to total wins & display win message. Update wins total.
+            if (score === num) {
+                wins++;
+                $("#winMessage").append("Game over. You win!");
+                $("#winsTotal").append("Wins: " + wins)
+            } 
+            // determine loss. Add 1 to total losses & display loss message. Update losses total.
+            else if (score > num) {
+                losses++;
+                $("#lossMessage").append("Game over. Sorry, You lost!");
+                $("#lossTotal").append("Losses: " + losses)
+
+            }
+       
         })
         $("#rubyBtn").on("click", function() {
             $(this).ruby;
@@ -66,6 +80,20 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
+            // determine win. Add 1 to total wins & display win message. Update wins total.
+            if (score === num) {
+                wins++;
+                $("#winMessage").append("Game over. You win!");
+                $("#winsTotal").append("Wins: " + wins)
+            } 
+            // determine loss. Add 1 to total losses & display loss message. Update losses total.
+            else if (score > num) {
+                losses++;
+                $("#lossMessage").append("Game over. Sorry, You lost!");
+                $("#lossTotal").append("Losses: " + losses)
+
+            }
+                
         })
         $("#diamondBtn").on("click", function() {
             $(this).diamond;
@@ -76,6 +104,20 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
+            // determine win. Add 1 to total wins & display win message. Update wins total.
+            if (score === num) {
+                wins++;
+                $("#winMessage").append("Game over. You win!");
+                $("#winsTotal").append("Wins: " + wins)
+            } 
+            // determine loss. Add 1 to total losses & display loss message. Update losses total.
+            else if (score > num) {
+                losses++;
+                $("#lossMessage").append("Game over. Sorry, You lost!");
+                $("#lossTotal").append("Losses: " + losses)
+
+            }
+                   
         })
         $("#amethystBtn").on("click", function() {
             $(this).amethyst;
@@ -86,19 +128,22 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
+            // determine win. Add 1 to total wins & display win message. Update wins total.
+            if (score === num) {
+                wins++;
+                $("#winMessage").append("Game over. You win!");
+                $("#winsTotal").append("Wins: " + wins)
+            } 
+            // determine loss. Add 1 to total losses & display loss message. Update losses total.
+            else if (score > num) {
+                losses++;
+                $("#lossMessage").append("Game over. Sorry, You lost!");
+                $("#lossTotal").append("Losses: " + losses)
+
+            }
+                   
         })
     
-        // determine win. Add 1 to total wins & display win message
-        if (score === num) {
-            wins++;
-            $("#winMessage").append("Game over. You win!");
-        } 
-        // determine loss. Add 1 to total losses & display loss message
-        else if (score > num) {
-            losses++;
-            $("#lossMessage").append("Game over. Sorry, You lost!");
-        }
-       
     }
     newGame();
     
