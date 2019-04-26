@@ -60,13 +60,17 @@ $(document).ready(function() {
             if (score === num) {
                 wins++;
                 $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").append("Wins: " + wins)
+                $("#winsTotal").text(wins);
+                $(".crystal").attr("disabled", true);
+                
             } 
             // determine loss. Add 1 to total losses & display loss message. Update losses total.
             else if (score > num) {
                 losses++;
                 $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").append("Losses: " + losses)
+                $("#lossTotal").text(losses);
+                $(".crystal").attr("disabled", true);
+
 
             }
        
@@ -84,13 +88,18 @@ $(document).ready(function() {
             if (score === num) {
                 wins++;
                 $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").append("Wins: " + wins)
+                $("#winsTotal").text(wins);
+                $(".crystal").attr("disabled", true);
+
+
             } 
             // determine loss. Add 1 to total losses & display loss message. Update losses total.
             else if (score > num) {
                 losses++;
                 $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").append("Losses: " + losses)
+                $("#lossTotal").text(losses);
+                $(".crystal").attr("disabled", true);
+
 
             }
                 
@@ -108,13 +117,18 @@ $(document).ready(function() {
             if (score === num) {
                 wins++;
                 $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").append("Wins: " + wins)
+                $("#winsTotal").text(wins);
+                $(".crystal").attr("disabled", true);
+
+
             } 
             // determine loss. Add 1 to total losses & display loss message. Update losses total.
             else if (score > num) {
                 losses++;
                 $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").append("Losses: " + losses)
+                $("#lossTotal").text(losses);
+                $(".crystal").attr("disabled", true);
+
 
             }
                    
@@ -132,22 +146,65 @@ $(document).ready(function() {
             if (score === num) {
                 wins++;
                 $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").append("Wins: " + wins)
+                $("#winsTotal").text(wins);
+                $(".crystal").attr("disabled", true);
+
+
             } 
             // determine loss. Add 1 to total losses & display loss message. Update losses total.
             else if (score > num) {
                 losses++;
                 $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").append("Losses: " + losses)
+                $("#lossTotal").text(losses);
+                $(".crystal").attr("disabled", true);
 
             }
+
                    
         })
     
     }
     newGame();
-    
-    // function to reset game with new number to match, crystal values & clear score
 
+    //reset button
+    
+    $("#reset").on("click", function() {
+        $("#matchNumber").text(null);
+        $("#winMessage").text(null);
+        $("#lossMessage").text(null);
+        score = 0;
+        scoreText.text(null);
+        $(".crystal").removeAttr("disabled");
+
+        // generate random number between 19 and 120
+        num = 19 + Math.floor(Math.random() * 120);
+        console.log("random number to match is " + num);
+
+        // display number to match
+        $("#matchNumber").append("The number to match is " + num);
+
+        //generate even or odd random number between 1 and 12 for each crystal
+        ruby = even[Math.floor(Math.random() * even.length)];
+        console.log("random value of ruby is " + ruby);
+
+        sapphire = odd[Math.floor(Math.random() * odd.length)];
+        console.log("random value of sapphire is " + sapphire);
+
+        diamond = odd[Math.floor(Math.random() * odd.length)];
+        console.log("random value of diamond is " + diamond);
+
+        amethyst = even[Math.floor(Math.random() * even.length)];
+        console.log("random value of amethyst is " + amethyst);
+
+    })
+
+    // quit button
+    $("#quit").on("click", function() {
+        $("matchNumber").text(null)
+        $("#winMessage").text(null);
+        $("#lossMessage").text(null);
+        scoreText.text(null);
+        alert("Thanks for playing!");
+    })
 
 })

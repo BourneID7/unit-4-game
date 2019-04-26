@@ -22,11 +22,6 @@ h4 {
     width: 100%;
     padding: 5px;
 }
-
-.btnCrystal {
-    background-color: transparent;
-    border: none;
-}
 .marginBottom {
     margin-bottom: 30px;
 }
@@ -35,4 +30,11 @@ h4 {
 }
 .borderRight {
     border-right: #666 solid 1px;
+}
+.hidden {
+    visibility: hidden;
+}
+.marginRight {
+    margin-right: 20px;
+    float: left;
 }

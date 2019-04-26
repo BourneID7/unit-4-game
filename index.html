@@ -38,28 +38,33 @@
 
                 <div class="row align-items-center marginBottom">
                     <div class="col">
-                        <button id="sapphireBtn"><img class="img-fluid" src="assets/images/sapphire.png"></button>
+                        <button id="sapphireBtn" class="crystal"><img class="img-fluid" src="assets/images/sapphire.png"></button>
                     </div>
                     <div class="col">
-                        <button id="rubyBtn"><img class="img-fluid" src="assets/images/ruby.png"></button>
+                        <button id="rubyBtn" class="crystal"><img class="img-fluid" src="assets/images/ruby.png"></button>
                     </div>
                     <div class="col">
-                        <button id="diamondBtn"><img class="img-fluid" src="assets/images/diamond.png"></button>
+                        <button id="diamondBtn" class="crystal"><img class="img-fluid" src="assets/images/diamond.png"></button>
                     </div>
                     <div class="col">
-                        <button id="amethystBtn"><img class="img-fluid" src="assets/images/amethyst.png"></button>
+                        <button id="amethystBtn" class="crystal"><img class="img-fluid" src="assets/images/amethyst.png"></button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row align-items-center">
                     <p id="winMessage"></p>
                     <p id="lossMessage"></p>
                 </div>
-                <div class="row">
-                    <h5 id="winsTotal"></h5>
+                <div class="row align-items-center">
+                    <h5>Wins: <span id="winsTotal"></span></h5>
                 </div>
-                <div class="row">
-                    <h5 id="lossTotal"></h5>
+                <div class="row align-items-center">
+                    <h5>Losses: <span id="lossTotal"></span></h5>
                 </div>
+                <div id="resetButtons" class="row align-items-center">
+                    <button type="button" id="reset" class="btn btn-primary marginRight">Play Again</button>
+                    <button type="button" id="quit" class="btn btn-primary marginRight">Quit</button>
+                </div>
+
 
             </div> <!-- end of right column --> 
         </main>
