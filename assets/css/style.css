@@ -1,5 +1,10 @@
 body {
-    background-color: #ccc;
+    background-color: #fff;
+    background: url("../images/46130649-gem-wallpapers.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .container {
     background-color: white;
@@ -16,6 +21,9 @@ main {
 }
 h1, h3 {
     text-align: center;
+}
+h1 {
+    padding-top: 20px;
 }
 h4 {
     text-align: center;
