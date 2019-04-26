@@ -204,6 +204,7 @@ $(document).ready(function() {
         $("#winMessage").text(null);
         $("#lossMessage").text(null);
         scoreText.text(null);
+        score = 0;
         alert("Thanks for playing!");
     })
 
