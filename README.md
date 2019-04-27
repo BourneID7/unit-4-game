@@ -11,4 +11,4 @@ The goal is to add crystal values until you reach the the total of the random nu
 
 If you match the value of the number the game ends and you win. If you go over the number the game ends and you lose.
 
-Once the game is over, the game values will reset with a new random number to match and the values of each crystal will change.
+Once the game is over, if you choose to play again game values will reset with a new random number to match and the values of each crystal will change.
