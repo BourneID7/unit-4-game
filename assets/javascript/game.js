@@ -23,6 +23,28 @@ $(document).ready(function() {
         var wins = 0;
         var losses = 0;
 
+
+    // function to determine win or loss
+    function winLoss () {
+        // determine win. Add 1 to total wins & display win message. Update wins total.
+        if (score === num) {
+            wins++;
+            $("#winMessage").append("Game over. You win!");
+            $("#winsTotal").text(wins);
+            $(".crystal").attr("disabled", true);
+            
+        } 
+        // determine loss. Add 1 to total losses & display loss message. Update losses total.
+        else if (score > num) {
+            losses++;
+            $("#lossMessage").append("Game over. Sorry, You lost!");
+            $("#lossTotal").text(losses);
+            $(".crystal").attr("disabled", true);
+        }
+    }
+
+
+    // start game
     function newGame() {
 
         // generate random number between 19 and 120
@@ -56,23 +78,7 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
-            // determine win. Add 1 to total wins & display win message. Update wins total.
-            if (score === num) {
-                wins++;
-                $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").text(wins);
-                $(".crystal").attr("disabled", true);
-                
-            } 
-            // determine loss. Add 1 to total losses & display loss message. Update losses total.
-            else if (score > num) {
-                losses++;
-                $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").text(losses);
-                $(".crystal").attr("disabled", true);
-
-
-            }
+            winLoss();
        
         })
         $("#rubyBtn").on("click", function() {
@@ -84,24 +90,8 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
-            // determine win. Add 1 to total wins & display win message. Update wins total.
-            if (score === num) {
-                wins++;
-                $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").text(wins);
-                $(".crystal").attr("disabled", true);
+            winLoss();
 
-
-            } 
-            // determine loss. Add 1 to total losses & display loss message. Update losses total.
-            else if (score > num) {
-                losses++;
-                $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").text(losses);
-                $(".crystal").attr("disabled", true);
-
-
-            }
                 
         })
         $("#diamondBtn").on("click", function() {
@@ -113,24 +103,8 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
-            // determine win. Add 1 to total wins & display win message. Update wins total.
-            if (score === num) {
-                wins++;
-                $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").text(wins);
-                $(".crystal").attr("disabled", true);
+            winLoss();
 
-
-            } 
-            // determine loss. Add 1 to total losses & display loss message. Update losses total.
-            else if (score > num) {
-                losses++;
-                $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").text(losses);
-                $(".crystal").attr("disabled", true);
-
-
-            }
                    
         })
         $("#amethystBtn").on("click", function() {
@@ -142,23 +116,7 @@ $(document).ready(function() {
             scoreText.text(null);
             $("#yourScore").append(score);
 
-            // determine win. Add 1 to total wins & display win message. Update wins total.
-            if (score === num) {
-                wins++;
-                $("#winMessage").append("Game over. You win!");
-                $("#winsTotal").text(wins);
-                $(".crystal").attr("disabled", true);
-
-
-            } 
-            // determine loss. Add 1 to total losses & display loss message. Update losses total.
-            else if (score > num) {
-                losses++;
-                $("#lossMessage").append("Game over. Sorry, You lost!");
-                $("#lossTotal").text(losses);
-                $(".crystal").attr("disabled", true);
-
-            }
+            winLoss();
 
                    
         })
@@ -170,6 +128,7 @@ $(document).ready(function() {
     
     $("#reset").on("click", function() {
         $("#matchNumber").text(null);
+        $("#matchNumber").removeClass(".hidden");
         $("#winMessage").text(null);
         $("#lossMessage").text(null);
         score = 0;
@@ -200,11 +159,15 @@ $(document).ready(function() {
 
     // quit button
     $("#quit").on("click", function() {
-        $("matchNumber").text(null)
-        $("#winMessage").text(null);
-        $("#lossMessage").text(null);
-        scoreText.text(null);
+        wins = 0;
+        losses = 0;
+        $("matchNumber").addClass(".hidden");
+        $("#winMessage").text("");
+        $("#lossMessage").text("");
+        scoreText.text("");
         score = 0;
+        $("#winsTotal").text("");
+        $("#lossTotal").text("")
         alert("Thanks for playing!");
     })
 
